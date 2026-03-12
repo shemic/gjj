@@ -1,0 +1,50 @@
+{
+  "table": "ai_user_account",
+  "columns": [
+    {
+      "name": "id",
+      "type": "BIGINT",
+      "notNull": true,
+      "primary": true,
+      "autoIncrement": true
+    },
+    {
+      "name": "phone",
+      "type": "VARCHAR(20)",
+      "notNull": true,
+      "primary": false,
+      "autoIncrement": false
+    },
+    {
+      "name": "password_hash",
+      "type": "VARCHAR(255)",
+      "notNull": true,
+      "primary": false,
+      "autoIncrement": false
+    },
+    {
+      "name": "created_at",
+      "type": "BIGINT",
+      "notNull": true,
+      "primary": false,
+      "autoIncrement": false
+    },
+    {
+      "name": "updated_at",
+      "type": "BIGINT",
+      "notNull": true,
+      "primary": false,
+      "autoIncrement": false
+    }
+  ],
+  "indexes": [
+    {
+      "name": "uidx_ai_user_account_phone",
+      "columns": [
+        "phone"
+      ],
+      "unique": true
+    }
+  ],
+  "updatedAt": "2026-03-12T08:13:27.377489061+08:00"
+}

@@ -1,0 +1,15 @@
+{
+  "table": "user_account",
+  "columns": [
+    {"name": "id", "type": "BIGINT", "notNull": true, "primary": true, "autoIncrement": true},
+    {"name": "uid", "type": "VARCHAR(64)"},
+    {"name": "phone", "type": "VARCHAR(20)", "notNull": true},
+    {"name": "password_hash", "type": "VARCHAR(255)", "notNull": true},
+    {"name": "created_at", "type": "BIGINT"},
+    {"name": "updated_at", "type": "BIGINT"}
+  ],
+  "indexes": [
+    {"name": "uidx_user_account_phone", "columns": ["phone"], "unique": true}
+  ],
+  "updatedAt": "2026-03-11T00:00:00Z"
+}

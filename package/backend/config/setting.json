@@ -1,0 +1,114 @@
+{
+  "log": {
+    "level": "info",
+    "encoding": "console",
+    "development": false,
+    "enabled": true,
+    "output": "stdout"
+  },
+  "http": {
+    "host": "0.0.0.0",
+    "port": 3010,
+    "shutdownTimeout": "10s",
+    "appName": "gjj-agents",
+    "enableTuning": true,
+    "prefork": false
+  },
+  "auth": {
+    "jwtSecret": "replace_me"
+  },
+  "sms": {
+    "provider": "fake",
+    "provider1": "aliyun",
+    "debugReturnCode": true,
+    "aliyun": {
+      "accessKeyId": "",
+      "accessKeySecret": "",
+      "regionId": "cn-hangzhou",
+      "endpoint": "dysmsapi.aliyuncs.com",
+      "signName": "",
+      "templateCode": {
+        "register": "",
+        "login": ""
+      },
+      "templateParamKey": "code",
+      "connectTimeoutMs": 5000,
+      "readTimeoutMs": 5000
+    }
+  },
+  "agents": [
+    {
+      "id": "qa-agent",
+      "name": "问答助手",
+      "enabled": true,
+      "provider": "minimax-cn-coding-plan",
+      "model": "minimax-cn-coding-plan/MiniMax-M2.5-highspeed",
+      "eventPath": "/event",
+      "systemPrompt": "你是一个专业问答助手，请简洁准确回答问题。",
+      "maxSteps": 8,
+      "agent": "default"
+    },
+    {
+      "id": "ticket-agent",
+      "name": "工单助手",
+      "enabled": true,
+      "provider": "minimax-cn-coding-plan",
+      "model": "minimax-cn-coding-plan/MiniMax-M2.5-highspeed",
+      "eventPath": "/event",
+      "systemPrompt": "你是工单助手，请输出可执行的处理步骤。",
+      "maxSteps": 12,
+      "agent": "default"
+    },
+    {
+      "id": "assistant-agent",
+      "name": "通用助手",
+      "enabled": true,
+      "provider": "minimax-cn-coding-plan",
+      "model": "minimax-cn-coding-plan/MiniMax-M2.5-highspeed",
+      "eventPath": "/event",
+      "systemPrompt": "你是一个可靠的智能助手。",
+      "maxSteps": 10,
+      "agent": "default"
+    },
+    {
+      "id": "group-agent",
+      "name": "群聊助手",
+      "enabled": true,
+      "provider": "minimax-cn-coding-plan",
+      "model": "minimax-cn-coding-plan/MiniMax-M2.5-highspeed",
+      "eventPath": "/event",
+      "systemPrompt": "你在群聊场景下总结重点并给出清晰建议。",
+      "maxSteps": 10,
+      "agent": "default"
+    }
+  ],
+  "speech": {
+    "enabled": false,
+    "provider": {
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "",
+      "model": "whisper-1"
+    },
+    "timeoutSeconds": 60,
+    "maxFileSizeMB": 20
+  },
+  "database": {
+    "create": true,
+    "default": {
+      "driver": "postgres",
+      "host": "127.0.0.1:5433",
+      "user": "app",
+      "pwd": "app",
+      "dbname": "gjj",
+      "prefix": "ai",
+      "maxOpenConns": 20,
+      "maxIdleConns": 10,
+      "connMaxLifetime": "300s",
+      "connMaxIdleTime": "120s",
+      "healthCheckPeriod": "5s"
+    }
+  },
+  "redis": {
+    "enable": false
+  }
+}

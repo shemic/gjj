@@ -1,0 +1,66 @@
+{
+  "table": "ai_user_verification_code",
+  "columns": [
+    {
+      "name": "id",
+      "type": "BIGINT",
+      "notNull": true,
+      "primary": true,
+      "autoIncrement": true
+    },
+    {
+      "name": "phone",
+      "type": "VARCHAR(20)",
+      "notNull": true,
+      "primary": false,
+      "autoIncrement": false
+    },
+    {
+      "name": "scene",
+      "type": "VARCHAR(32)",
+      "notNull": true,
+      "primary": false,
+      "autoIncrement": false
+    },
+    {
+      "name": "code",
+      "type": "VARCHAR(6)",
+      "notNull": true,
+      "primary": false,
+      "autoIncrement": false
+    },
+    {
+      "name": "expires_at",
+      "type": "BIGINT",
+      "notNull": true,
+      "primary": false,
+      "autoIncrement": false
+    },
+    {
+      "name": "used_at",
+      "type": "BIGINT",
+      "notNull": true,
+      "primary": false,
+      "autoIncrement": false
+    },
+    {
+      "name": "created_at",
+      "type": "BIGINT",
+      "notNull": true,
+      "primary": false,
+      "autoIncrement": false
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_ai_user_verification_code_search",
+      "columns": [
+        "phone",
+        "scene",
+        "created_at"
+      ],
+      "unique": false
+    }
+  ],
+  "updatedAt": "2026-03-11T11:17:21.474793526+08:00"
+}

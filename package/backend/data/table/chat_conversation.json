@@ -1,0 +1,18 @@
+{
+  "table": "chat_conversation",
+  "columns": [
+    {"name": "id", "type": "BIGINT", "notNull": true, "primary": true, "autoIncrement": true},
+    {"name": "uid", "type": "VARCHAR(64)", "notNull": true},
+    {"name": "title", "type": "VARCHAR(200)", "notNull": true},
+    {"name": "session_id", "type": "VARCHAR(128)"},
+    {"name": "mode", "type": "VARCHAR(32)", "notNull": true},
+    {"name": "agent_id", "type": "VARCHAR(64)", "notNull": true},
+    {"name": "created_at", "type": "BIGINT"},
+    {"name": "updated_at", "type": "BIGINT"}
+  ],
+  "indexes": [
+    {"name": "idx_chat_conversation_uid_updated", "columns": ["uid", "updated_at"], "unique": false},
+    {"name": "idx_chat_conversation_uid_session", "columns": ["uid", "session_id"], "unique": false}
+  ],
+  "updatedAt": "2026-03-11T00:00:00Z"
+}

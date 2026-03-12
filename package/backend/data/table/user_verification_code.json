@@ -1,0 +1,16 @@
+{
+  "table": "user_verification_code",
+  "columns": [
+    {"name": "id", "type": "BIGINT", "notNull": true, "primary": true, "autoIncrement": true},
+    {"name": "phone", "type": "VARCHAR(20)", "notNull": true},
+    {"name": "scene", "type": "VARCHAR(32)", "notNull": true},
+    {"name": "code", "type": "VARCHAR(6)", "notNull": true},
+    {"name": "expires_at", "type": "BIGINT"},
+    {"name": "used_at", "type": "BIGINT"},
+    {"name": "created_at", "type": "BIGINT"}
+  ],
+  "indexes": [
+    {"name": "idx_user_verification_code_search", "columns": ["phone", "scene", "created_at"], "unique": false}
+  ],
+  "updatedAt": "2026-03-11T00:00:00Z"
+}
